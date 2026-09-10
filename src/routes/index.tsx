@@ -1,24 +1,126 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+// === Banners dos botões ===
+// Para trocar uma imagem: substitua o arquivo correspondente em src/assets/
+// (banner-1.png, banner-2.png, banner-3.png) por outra horizontal da sua escolha.
+import banner1 from "@/assets/banner-1.png";
+import banner2 from "@/assets/banner-2.png";
+import banner3 from "@/assets/banner-3.png";
+
+// === Links dos botões ===
+// Edite as URLs abaixo para apontar para onde quiser.
+const LINKS = [
+  { image: banner1, href: "https://exemplo.com/link-1", alt: "Link 1" },
+  { image: banner2, href: "https://exemplo.com/link-2", alt: "Link 2" },
+  { image: banner3, href: "https://exemplo.com/link-3", alt: "Link 3" },
+];
+
+// === Redes sociais ===
+// Edite as URLs abaixo com os seus perfis.
+const SOCIALS = [
+  {
+    name: "Instagram",
+    href: "https://instagram.com/",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    name: "YouTube",
+    href: "https://youtube.com/",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+        <rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" strokeWidth="1.8" />
+        <path d="M10.5 9.2 15 12l-4.5 2.8V9.2Z" fill="currentColor" />
+      </svg>
+    ),
+  },
+];
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Olavo Abravanel" },
+      {
+        name: "description",
+        content: "Meus links — Olavo Abravanel",
+      },
+      { property: "og:title", content: "Olavo Abravanel" },
+      { property: "og:description", content: "Meus links — Olavo Abravanel" },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
+  component: LinksPage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function LinksPage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+    <main className="relative flex min-h-[100dvh] flex-col items-center overflow-hidden bg-forest px-5 pb-10 pt-14 text-foreground">
+      {/* brilho de fundo */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-lime/20 blur-[90px]"
       />
-    </div>
+
+      {/* avatar */}
+      <div className="avatar-squircle relative z-10 grid h-28 w-28 place-items-center bg-sun shadow-lg shadow-black/30">
+        {/* Para usar sua foto: troque esta div por <img src={suaFoto} alt="Olavo Abravanel" className="avatar-squircle h-28 w-28 object-cover" /> */}
+        <span className="font-display text-4xl font-bold text-forest-deep">OA</span>
+      </div>
+
+      {/* nome */}
+      <h1 className="relative z-10 mt-5 font-display text-2xl font-bold lowercase tracking-tight text-lime">
+        olavo abravanel
+      </h1>
+
+      {/* botões / banners */}
+      <nav className="relative z-10 mt-8 flex w-full max-w-md flex-col gap-4">
+        {LINKS.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block overflow-hidden rounded-full border border-lime/20 bg-lime-soft shadow-md shadow-black/20 transition-transform duration-200 active:scale-[0.98]"
+          >
+            <img
+              src={link.image}
+              alt={link.alt}
+              width={1200}
+              height={512}
+              loading="lazy"
+              className="h-20 w-full object-cover sm:h-24"
+            />
+          </a>
+        ))}
+      </nav>
+
+      {/* redes sociais */}
+      <div className="relative z-10 mt-9 flex items-center gap-6">
+        {SOCIALS.map((social) => (
+          <a
+            key={social.name}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={social.name}
+            className="text-lime transition-transform duration-200 hover:scale-115 active:scale-95"
+          >
+            {social.icon}
+          </a>
+        ))}
+      </div>
+
+      {/* efeito de cartões empilhados no rodapé */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col items-center">
+        <div className="h-10 w-[88%] rounded-t-3xl bg-lime-soft/70" />
+        <div className="h-12 w-[94%] rounded-t-3xl bg-forest-deep" />
+      </div>
+    </main>
   );
 }
