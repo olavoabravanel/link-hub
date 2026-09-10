@@ -108,7 +108,7 @@ function LinksPage() {
       </nav>
 
       {/* redes sociais */}
-      <div className="relative z-10 mt-9 flex items-center gap-6">
+      <div className="relative z-10 mt-9 flex items-center justify-center gap-8">
         {SOCIALS.map((social) => (
           <a
             key={social.name}
@@ -123,10 +123,9 @@ function LinksPage() {
         ))}
       </div>
 
-      {/* efeito de cartões empilhados no rodapé */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col items-center">
-        <div className="h-10 w-[88%] rounded-t-3xl bg-lime-soft/70" />
-        <div className="h-12 w-[94%] rounded-t-3xl bg-forest-deep" />
+      {/* rodapé simples */}
+      <div aria-hidden="true" className="relative z-10 mt-auto pt-8">
+        <div className="h-1.5 w-32 rounded-full bg-lime/30" />
       </div>
     </main>
   );
