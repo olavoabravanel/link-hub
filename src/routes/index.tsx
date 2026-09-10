@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 // === Foto de perfil ===
-// Para trocar: substitua o arquivo apontado por src/assets/olavo-profile.jpg.asset.json
-import olavoProfile from "@/assets/olavo-profile.jpg.asset.json";
+// Para trocar: gere/coloque outra imagem quadrada em src/assets/olavo-avatar.png
+import olavoProfile from "@/assets/olavo-avatar.png";
 
 // === Banners dos botões ===
 // Para trocar uma imagem: substitua o arquivo correspondente em src/assets/
@@ -74,9 +74,9 @@ function LinksPage() {
       {/* avatar */}
       <div className="avatar-squircle relative z-10 h-28 w-28 overflow-hidden bg-sun shadow-lg shadow-black/30 ring-2 ring-lime/30">
         <img
-          src={olavoProfile.url}
+          src={olavoProfile}
           alt="Olavo Abravanel"
-          className="avatar-squircle h-full w-full object-cover object-[center_25%]"
+          className="avatar-squircle h-full w-full object-cover"
         />
       </div>
 
