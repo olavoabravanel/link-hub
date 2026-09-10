@@ -70,7 +70,7 @@ function LinksPage() {
       {/* avatar */}
       <div className="avatar-squircle relative z-10 grid h-28 w-28 place-items-center bg-sun shadow-lg shadow-black/30">
         {/* Para usar sua foto: troque esta div por <img src={suaFoto} alt="Olavo Abravanel" className="avatar-squircle h-28 w-28 object-cover" /> */}
-        <span className="font-display text-4xl font-bold text-forest-deep">OA</span>
+        <span className="font-display text-4xl font-bold leading-none text-forest-deep">OA</span>
       </div>
 
       {/* nome */}
