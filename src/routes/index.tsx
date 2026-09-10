@@ -1,5 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+// === Foto de perfil ===
+// Para trocar: gere/coloque outra imagem quadrada em src/assets/olavo-avatar.png
+import olavoProfile from "@/assets/olavo-avatar.png";
+
 // === Banners dos botões ===
 // Para trocar uma imagem: substitua o arquivo correspondente em src/assets/
 // (banner-1.png, banner-2.png, banner-3.png) por outra horizontal da sua escolha.
@@ -68,9 +72,12 @@ function LinksPage() {
       />
 
       {/* avatar */}
-      <div className="avatar-squircle relative z-10 grid h-28 w-28 place-items-center bg-sun shadow-lg shadow-black/30">
-        {/* Para usar sua foto: troque esta div por <img src={suaFoto} alt="Olavo Abravanel" className="avatar-squircle h-28 w-28 object-cover" /> */}
-        <span className="font-display text-4xl font-bold leading-none text-forest-deep">OA</span>
+      <div className="avatar-squircle relative z-10 h-28 w-28 overflow-hidden bg-sun shadow-lg shadow-black/30 ring-2 ring-lime/30">
+        <img
+          src={olavoProfile}
+          alt="Olavo Abravanel"
+          className="avatar-squircle h-full w-full object-cover"
+        />
       </div>
 
       {/* nome */}
