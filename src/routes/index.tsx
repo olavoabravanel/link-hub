@@ -10,6 +10,7 @@ import olavoProfile from "@/assets/olavo-avatar.png";
 import banner1 from "@/assets/banner-1.png";
 import banner2 from "@/assets/banner-2.png";
 import banner3 from "@/assets/banner-3.png";
+import banner4 from "@/assets/banner-4.png";
 
 // === Links dos botões ===
 // Edite as URLs abaixo para apontar para onde quiser.
@@ -17,6 +18,7 @@ const LINKS = [
   { image: banner1, href: "https://exemplo.com/link-1", alt: "Link 1" },
   { image: banner2, href: "https://exemplo.com/link-2", alt: "Link 2" },
   { image: banner3, href: "https://exemplo.com/link-3", alt: "Link 3" },
+  { image: banner4, href: "https://exemplo.com/link-4", alt: "Link 4" },
 ];
 
 // === Redes sociais ===
