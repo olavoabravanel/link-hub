@@ -26,7 +26,7 @@ const LINKS = [
 const SOCIALS = [
   {
     name: "Instagram",
-    href: "https://instagram.com/",
+    href: "https://www.instagram.com/olavoabravanel",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
         <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
@@ -37,7 +37,7 @@ const SOCIALS = [
   },
   {
     name: "YouTube",
-    href: "https://youtube.com/",
+    href: "https://www.youtube.com/@OlavoAbravanel",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
         <rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" strokeWidth="1.8" />
