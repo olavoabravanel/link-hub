@@ -19,7 +19,7 @@ const LINKS = [
     glow: "oklch(0.78 0.17 130)", // verde-lima
   },
   {
-    image: banner2.url,
+    image: banner2,
     href: "https://exemplo.com/link-2",
     alt: "Segredos do Trade — manual por R$10",
     glow: "oklch(0.88 0.16 95)", // amarelo-dourado
