@@ -5,21 +5,21 @@ import { createFileRoute } from "@tanstack/react-router";
 import olavoProfile from "@/assets/olavo-avatar.png";
 
 // === Banners dos botões ===
-import banner1 from "@/assets/botao-1.webp.asset.json";
-import banner2 from "@/assets/botao-2.webp.asset.json";
+import banner1 from "@/assets/botao-1.webp";
+import banner2 from "@/assets/botao-2.webp";
 
 // === Links dos botões ===
 // Edite as URLs abaixo para apontar para onde quiser.
 const LINKS = [
   {
-    image: banner1.url,
+    image: banner1,
     href: "https://exemplo.com/link-1",
     alt: "Licença vitalícia do J.A.R.V.I.S.",
     // Cor do contorno personalizado deste botão
     glow: "oklch(0.78 0.17 130)", // verde-lima
   },
   {
-    image: banner2.url,
+    image: banner2,
     href: "https://exemplo.com/link-2",
     alt: "Segredos do Trade — manual por R$10",
     glow: "oklch(0.88 0.16 95)", // amarelo-dourado
