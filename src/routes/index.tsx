@@ -5,16 +5,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import olavoProfile from "@/assets/olavo-avatar.png";
 
 // === Banners dos botões ===
-// Para trocar uma imagem: substitua o arquivo correspondente em src/assets/
-// (banner-1.png, banner-2.png, banner-3.png) por outra horizontal da sua escolha.
-import banner1 from "@/assets/banner-1.png";
-import banner2 from "@/assets/banner-2.png";
+import banner1 from "@/assets/botao-1.webp.asset.json";
+import banner2 from "@/assets/botao-2.webp.asset.json";
 
 // === Links dos botões ===
 // Edite as URLs abaixo para apontar para onde quiser.
 const LINKS = [
-  { image: banner1, href: "https://exemplo.com/link-1", alt: "Link 1" },
-  { image: banner2, href: "https://exemplo.com/link-2", alt: "Link 2" },
+  { image: banner1.url, href: "https://exemplo.com/link-1", alt: "Licença vitalícia do J.A.R.V.I.S." },
+  { image: banner2.url, href: "https://exemplo.com/link-2", alt: "Segredos do Trade — manual por R$10" },
 ];
 
 // === Redes sociais ===
@@ -91,15 +89,13 @@ function LinksPage() {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block overflow-hidden rounded-full border border-lime/20 bg-lime-soft shadow-md shadow-black/20 transition-transform duration-200 active:scale-[0.98]"
+            className="group block overflow-hidden rounded-2xl border border-lime/20 bg-forest-deep shadow-md shadow-black/20 transition-transform duration-200 active:scale-[0.98]"
           >
             <img
               src={link.image}
               alt={link.alt}
-              width={1200}
-              height={512}
               loading="lazy"
-              className="h-20 w-full object-cover sm:h-24"
+              className="block h-auto w-full"
             />
           </a>
         ))}
