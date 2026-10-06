@@ -100,7 +100,8 @@ function LinksPage() {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block overflow-hidden rounded-2xl border border-lime/20 bg-forest-deep shadow-md shadow-black/20 transition-transform duration-200 active:scale-[0.98]"
+            style={{ ["--btn-glow" as string]: link.glow }}
+            className="btn-outline group block overflow-hidden rounded-2xl bg-forest-deep transition-transform duration-200 active:scale-[0.98]"
           >
             <img
               src={link.image}
