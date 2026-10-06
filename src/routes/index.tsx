@@ -11,8 +11,19 @@ import banner2 from "@/assets/botao-2.webp.asset.json";
 // === Links dos botões ===
 // Edite as URLs abaixo para apontar para onde quiser.
 const LINKS = [
-  { image: banner1.url, href: "https://exemplo.com/link-1", alt: "Licença vitalícia do J.A.R.V.I.S." },
-  { image: banner2.url, href: "https://exemplo.com/link-2", alt: "Segredos do Trade — manual por R$10" },
+  {
+    image: banner1.url,
+    href: "https://exemplo.com/link-1",
+    alt: "Licença vitalícia do J.A.R.V.I.S.",
+    // Cor do contorno personalizado deste botão
+    glow: "oklch(0.78 0.17 130)", // verde-lima
+  },
+  {
+    image: banner2.url,
+    href: "https://exemplo.com/link-2",
+    alt: "Segredos do Trade — manual por R$10",
+    glow: "oklch(0.88 0.16 95)", // amarelo-dourado
+  },
 ];
 
 // === Redes sociais ===
